@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #tutorial {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="tutorial" width="150" height="150"></canvas>
+    <script>
+      (function getBodyDraw() {
+        const body = document.querySelector('body');
+        body.onload = draw();
+      })();
+
+      function draw() {
+        const canvas = document.querySelector('#tutorial');
+        if (canvas.getContext) {
+          const ctx = canvas.getContext('2d');
+
+          //   ctx.fillStyle = 'rgb(200, 0, 0)';
+          //   ctx.fillRect(10, 10, 50, 50);
+
+          //   ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+          //   ctx.fillRect(30, 30, 50, 50);
+
+          //   ctx.clearRect(45, 45, 60, 60);
+          //   ctx.strokeRect(50, 50, 50, 50);
+
+          ctx.beginPath();
+          //   x, y, radius, startangle, endangle, 順逆時鐘
+          ctx.arc(75, 75, 50, 0, Math.PI * 2, true);
+          ctx.moveTo(110, 75);
+          ctx.arc(75, 75, 35, 0, Math.PI, false);
+          ctx.moveTo(65, 65);
+          ctx.arc(65, 65, 5, 0, Math.PI * 2, true);
+          ctx.moveTo(95, 65);
+          ctx.arc(90, 65, 5, 0, Math.PI * 2, true);
+          ctx.stroke();
+
+          //   ctx.moveTo(75, 50);
+          //   ctx.lineTo(100, 75);
+          //   ctx.lineTo(100, 25);
+          //   ctx.fill();
+
+          // Filled triangle
+          //   ctx.beginPath();
+          //   ctx.moveTo(25, 25);
+          //   ctx.lineTo(105, 25);
+          //   ctx.lineTo(25, 105);
+          //   ctx.fill();
+
+          // Stroked triangle
+          //   ctx.beginPath();
+          //   ctx.moveTo(125, 125);
+          //   ctx.lineTo(125, 45);
+          //   ctx.lineTo(45, 125);
+          //   ctx.closePath();
+          //   ctx.stroke();
+        } else {
+          canvas.textContent = '你的瀏覽器不支援此api!';
+        }
+      }
+    </script>
+  </body>
+</html>
