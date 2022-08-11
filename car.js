@@ -6,6 +6,7 @@ function main() {
   const canvas = document.querySelector('#cube');
   const renderer = new THREE.WebGLRenderer({ canvas });
   
+  //首先定義光源
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
   scene.add(ambientLight);
   

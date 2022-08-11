@@ -5,6 +5,8 @@ const scene = new THREE.Scene();
 function main() {
   const canvas = document.querySelector('#cube');
   const renderer = new THREE.WebGLRenderer({ canvas });
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = 2;
   const fov = 75;  // 與視角之間的距離
   const aspect = window.innerWidth / window.innerHeight; // camera水平與垂直長度的比值，通常為canvas寬高比
   const near = 0.1;
